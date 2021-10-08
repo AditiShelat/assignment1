@@ -1,0 +1,21 @@
+enum oddeven : Error{
+  case noNegative
+}
+func f(a: Int) throws {
+  if a>0 {
+    if(a%2==0){
+      print((a)," is even")
+    }else{
+      print((a)," is odd")
+    }
+  }
+  else{
+    throw oddeven.noNegative
+  }  
+}
+do{
+  try f(a:8)
+}
+  catch let error{
+    print("Error: \(error)")
+} 
